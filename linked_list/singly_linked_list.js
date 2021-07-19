@@ -1,4 +1,5 @@
 const { reverseLinkedList, hello } = require("./reverse_linked_list");
+const { hasCycle } = require("./has_cycle");
 class Node {
   constructor(val) {
     this.val = val;
@@ -161,5 +162,8 @@ myLinkedList.addToHead("b");
 myLinkedList.addToHead("a");
 myLinkedList.addToTail("d");
 
-const reversed = reverseLinkedList(myLinkedList);
-console.log(reversed);
+myLinkedList.tail.next = myLinkedList.head;
+
+// const reversed = reverseLinkedList(myLinkedList);
+
+console.log(hasCycle(myLinkedList));
