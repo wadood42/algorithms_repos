@@ -1,3 +1,4 @@
+const { reverseLinkedList, hello } = require("./reverse_linked_list");
 class Node {
   constructor(val) {
     this.val = val;
@@ -160,4 +161,5 @@ myLinkedList.addToHead("b");
 myLinkedList.addToHead("a");
 myLinkedList.addToTail("d");
 
-myLinkedList.printList();
+const reversed = reverseLinkedList(myLinkedList);
+console.log(reversed);
