@@ -1,5 +1,7 @@
 const { reverseLinkedList, hello } = require("./reverse_linked_list");
 const { hasCycle } = require("./has_cycle");
+const { getIntersectedNode } = require("./linkedListIntersection");
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -156,14 +158,25 @@ class LinkedList {
 }
 
 const myLinkedList = new LinkedList();
+const urLinkedList = new LinkedList();
 
-myLinkedList.addToHead("c");
-myLinkedList.addToHead("b");
-myLinkedList.addToHead("a");
-myLinkedList.addToTail("d");
+myLinkedList.addToTail("A");
+myLinkedList.addToTail("B");
+myLinkedList.addToTail("C");
+myLinkedList.addToTail("D");
+myLinkedList.addToTail("E");
+myLinkedList.addToTail("F");
 
-myLinkedList.tail.next = myLinkedList.head;
+urLinkedList.addToTail("U");
+urLinkedList.addToTail("V");
+urLinkedList.addToTail("W");
+urLinkedList.addToTail("X");
+urLinkedList.addToTail("Y");
+urLinkedList.addToTail("Z");
 
-// const reversed = reverseLinkedList(myLinkedList);
+let nodeD = myLinkedList.get(3);
+let nodeW = urLinkedList.get(2);
 
-console.log(hasCycle(myLinkedList));
+nodeD.next = nodeW;
+
+console.log(getIntersectedNode(myLinkedList.head, urLinkedList.head));
