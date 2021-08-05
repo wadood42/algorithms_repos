@@ -12,12 +12,14 @@ let c = new TreeNode("c");
 let d = new TreeNode("d");
 let e = new TreeNode("e");
 let f = new TreeNode("f");
+let z = new TreeNode("z");
 
 a.left = b;
 a.right = c;
 b.left = d;
 b.right = e;
 c.right = f;
+f.right = z;
 
 // in-order: left, self, right
 function inOrderPrint(root) {
